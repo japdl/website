@@ -1,5 +1,9 @@
 <template>
-  <NavBar :routes="routes"/>
+  <div id="top" class="flex justify-around dark:bg-gray-200">
+    <div id="balance"></div>
+    <NavBar :routes="routes" />
+    <ThemeSwitch />
+  </div>
   <main>
     <router-view />
   </main>
@@ -7,11 +11,12 @@
 
 <script lang="ts" setup>
 import NavBar from "./components/NavBar.vue";
+import ThemeSwitch from "./components/ThemeSwitch.vue";
 
 const routes = [
   {
     name: "Accueil",
-    path: "/home",
+    path: "/",
   },
   {
     name: "Téléchargement",
